@@ -1,36 +1,50 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Music, Pause } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+type MusicTrack = "A" | "B" | "C";
+
 /** Musik latar mulai diputar setelah tamu membuka undangan. */
-export function MusicToggle({ start }: { start: boolean }) {
+export function MusicToggle({ start, track }: { start: boolean; track: MusicTrack }) {
   const [playing, setPlaying] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const audioRef = useRef<{ track: MusicTrack; audio: HTMLAudioElement } | null>(null);
 
-  const stop = () => {
-    audioRef.current?.pause();
+  const stop = useCallback(() => {
+    audioRef.current?.audio.pause();
     setPlaying(false);
-  };
+  }, []);
 
-  const play = async () => {
-    const audio = audioRef.current ?? new Audio(`${import.meta.env.BASE_URL}Wedding.mp3`);
-    audioRef.current = audio;
+  const play = useCallback(async () => {
+    let current = audioRef.current;
+    if (!current || current.track !== track) {
+      current?.audio.pause();
+      current = {
+        track,
+        audio: new Audio(`${import.meta.env.BASE_URL}${track}.mp3`),
+      };
+      audioRef.current = current;
+    }
+    const { audio } = current;
     audio.loop = true;
     audio.volume = 0.65;
 
     try {
       await audio.play();
-      setPlaying(!audio.paused);
+      if (audioRef.current === current) setPlaying(!audio.paused);
     } catch (error) {
-      console.error("Tidak dapat memutar musik undangan:", error);
-      setPlaying(false);
+      console.error(`Tidak dapat memutar lagu ${track}:`, error);
+      if (audioRef.current === current) setPlaying(false);
     }
-  };
+  }, [track]);
 
   useEffect(() => {
     if (start) void play();
-    return stop;
-  }, [start]);
+    return () => {
+      audioRef.current?.audio.pause();
+      audioRef.current = null;
+      setPlaying(false);
+    };
+  }, [play, start]);
 
   if (!start) return null;
 

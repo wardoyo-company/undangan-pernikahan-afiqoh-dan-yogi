@@ -7,7 +7,7 @@ export const wedding = {
   },
   bride: {
     nick: "Afiqoh",
-    full: "Afiqoh Gumala, S.Pd.",
+    full: "Afiqoh Gamala, S.Pd.",
     parents: "Putri terakhir dari Bapak Sukrisno (Alm) & Ibu Suriani (Almh)",
   },
   // Tanggal & jam hari H (WIB)
@@ -35,26 +35,26 @@ export const wedding = {
     {
       year: "2021",
       title: "Awal Bertemu",
-      text: "'Tidak ada yang tahu tentang rencana-Nya'. Awal kami bertemu di tempat kerja yang sama, tegur sapa yang tidak ada rasa, hanya sapaan biasa. 'Ogeek', sapaan Afiqoh padanya kala itu. Beberapa bulan kemudian, Ogek resign dan memutuskan untuk merantau.",
+      text: '"Tidak ada yang tahu tentang rencana-Nya". Awal kami bertemu di tempat kerja yang sama, tegur sapa yang tidak ada rasa, hanya sapaan biasa. "Ogeek", sapaan Afiqoh padanya kala itu. Beberapa bulan kemudian, Ogek resign dan memutuskan untuk merantau.',
     },
     {
       year: "2024",
       title: "Bertemu Kembali",
-      text: "'Bukan bertemu lalu berjodoh, sebab berjodohlah maka bertemu'. Pada penghujung tahun 2024 adalah masa refresh Afiqoh, setelah berjuang dari lelahnya menyelesaikan skripsi hingga akhirnya wisuda, Afiqoh dan salah satu teman kuliah sedang duduk di cafe daerah UMSU langganan kami. Di tengah obrolan yang semakin seru, notif WA masuk (nomor tidak dikenal: 'P'), dengan profil yang sangat familiar. 'Ogeek ?' ucap Afiqoh, kemudian Afiqoh membalas seadanya.",
+      text: '"Bukan bertemu lalu berjodoh, sebab berjodohlah maka bertemu". Pada penghujung tahun 2024 adalah masa refresh Afiqoh, setelah berjuang dari lelahnya menyelesaikan skripsi hingga akhirnya wisuda, Afiqoh dan salah satu teman kuliah sedang duduk di cafe daerah UMSU langganan kami. Di tengah obrolan yang semakin seru, notif WA masuk (nomor tidak dikenal: "P"), dengan profil yang sangat familiar. "Ogeek ?" ucap Afiqoh, kemudian Afiqoh membalas seadanya. Singkat cerita, chat, telefon, hingga main ke rumah untuk bertemu abang dan kakak sudah dilewatinya. Komitmen muncul di bulan November 2025, "kita nikah tahun depan ya" (ucap Yogi), mulailah Afiqoh mencatat semuanya dari mulai seserahan, mahar, sampai konsep menikah. Selesai Afiqoh catat-catat, kita pergi beli satu per satu dari bulan ke bulan menuju hari H-lamaran.',
     },
     {
       year: "2026",
       title: "Lamaran",
-      text: "Atas ridho sang illahi robbi, juga restu kakak dan abang serta kedua orang tua Yogi, kami menggelar acara lamaran dengan konsep intimate hanya keluarga besar saja. Air mata haru bahagia begitu lekat pada kami, sebab prosesnya benar-benar tidak semudah yang dibayangkan.",
+      text: "Pada tanggal 12 Juli 2026, atas ridho sang illahi robbi, juga restu kakak dan abang serta kedua orang tua Yogi, kami menggelar acara lamaran dengan konsep intimate hanya keluarga besar saja. Air mata haru bahagia begitu lekat pada kami, sebab prosesnya benar-benar tidak semudah yang dibayangkan.",
     },
     {
       year: "2026",
-      title: "Pernikahan",
-      text: "Awal dari selamanya, kini kami dari dua manusia yang memiliki ego masing-masing, memilih dan menetap untuk selamanya dari ribuan ego salah juga maaf yang terucap dan memaafkan. Dominan ego, marah juga berulang kali untuk mundur (jelas afiqoh), dia Muhammad Yogi, begitu sabarnya, begitu lembutnya, begitu pahamnya dia, sehingga wanita ini yakin dan mau untuk maju lagi bersama. 'kami berlayar'. Sebagaimana perkataan indahnya Sayyidina Ali Bin Abi Thalib 'apa yang menjadi takdirmu akan menemukan jalannya untuk menemukanmu'.",
+      title: "Menikah",
+      text: 'Awal dari selamanya, kini kami dari dua manusia yang memiliki ego masing-masing, memilih dan menetap untuk selamanya dari ribuan ego salah juga maaf yang terucap dan memaafkan. Dominan ego, marah juga berulang kali untuk mundur (jelas afiqoh), dia Muhammad Yogi, begitu sabarnya, begitu lembutnya, begitu pahamnya dia, sehingga wanita ini yakin dan mau untuk maju lagi bersama. "kami berlayar". Sebagaimana perkataan indahnya Sayyidina Ali Bin Abi Thalib "apa yang menjadi takdirmu akan menemukan jalannya untuk menemukanmu".',
     },
   ],
   gifts: [
-    { bank: "SeaBank", number: "901701269987", holder: "Afiqoh Gumala" },
+    { bank: "SeaBank", number: "901701269987", holder: "Afiqoh Gamala" },
     { bank: "Bank Mandiri", number: "1060022453669", holder: "M. YOGI" },
   ],
   quote: {

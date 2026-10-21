@@ -4,8 +4,8 @@ import { CalendarPlus, Check, Copy, MapPin, MailOpen } from "lucide-react";
 
 import coverBg from "@/assets/cover-bg-green.jpg";
 import floral from "@/assets/floral-corner-green.png";
-import groomImg from "@/assets/groom.jpeg";
-import brideImg from "@/assets/bride.jpeg";
+import groomImg from "@/assets/groom.png";
+import brideImg from "@/assets/bride.png";
 import { Gallery } from "@/components/undangan/Gallery";
 import { Countdown } from "@/components/undangan/Countdown";
 import { FloralDecor } from "@/components/undangan/FloralDecor";
@@ -21,8 +21,12 @@ const title = `Undangan Pernikahan ${wedding.bride.nick} & ${wedding.groom.nick}
 const description = `Dengan memohon rahmat Allah, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di pernikahan kami pada ${wedding.dateLabel}.`;
 
 export const Route = createFileRoute("/")({
-  validateSearch: (search: Record<string, unknown>): { kpd?: string } =>
-    typeof search['kpd'] === "string" ? { kpd: search['kpd'] as string } : {},
+  validateSearch: (search: Record<string, unknown>): { kpd?: string; lagu?: "A" | "B" | "C" } => ({
+    ...(typeof search["kpd"] === "string" ? { kpd: search["kpd"] } : {}),
+    ...(search["lagu"] === "A" || search["lagu"] === "B" || search["lagu"] === "C"
+      ? { lagu: search["lagu"] }
+      : {}),
+  }),
   head: () => ({
     meta: [
       { title },
@@ -37,7 +41,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Undangan() {
-  const { kpd } = Route.useSearch();
+  const { kpd, lagu } = Route.useSearch();
   const guestName = (kpd ?? "").trim() || "Tamu Undangan";
   const [opened, setOpened] = useState(false);
 
@@ -61,7 +65,7 @@ function Undangan() {
       />
       <Cover guestName={guestName} opened={opened} onOpen={() => setOpened(true)} />
       {opened ? <Snowfall /> : null}
-      <MusicToggle start={opened} />
+      <MusicToggle start={opened} track={lagu ?? "B"} />
       {opened ? <BottomNav /> : null}
 
       <main className="relative z-10 mx-auto max-w-3xl px-5 pb-[calc(7rem+env(safe-area-inset-bottom))]" inert={!opened}>
@@ -81,7 +85,7 @@ function Undangan() {
         </div>
         <Gallery />
         <div className="relative">
-          <FloralDecor corner="top-left" size="w-[40vw] max-w-[180px]" />
+          <FloralDecor corner="top-left" size="w-[40vw] max-w-[180px]" lower />
           <GiftSection />
         </div>
 
